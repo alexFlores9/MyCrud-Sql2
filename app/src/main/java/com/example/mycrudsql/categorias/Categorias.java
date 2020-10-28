@@ -47,8 +47,7 @@ public class Categorias extends Fragment  implements View.OnClickListener {
     private Button btnSave, btnNew;
     String datoSelect = "";
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_categorias, container, false);
         ti_idcategoria = root.findViewById(R.id.ti_idcategoria);
@@ -111,8 +110,7 @@ Toast.LENGTH_SHORT);
                     Toast.makeText(getContext(), "Bien...", Toast.LENGTH_SHORT).show();
                     save_server(getContext(), Integer.parseInt(id), nombre, Integer.parseInt(datoSelect));
                 }else{
-                    Toast.makeText(getContext(), "Debe seleccionar un estado para la categoria",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Debe seleccionar un estado para la categoria",Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btnNew:

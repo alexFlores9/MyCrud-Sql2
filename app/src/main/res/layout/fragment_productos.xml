@@ -157,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:entries="@array/estadoProductos"
+
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:layout_marginLeft="20dp"
@@ -179,7 +179,7 @@
                 android:layout_marginRight="20dp"
                 android:textColorHint="#000"
                 android:spinnerMode="dropdown"
-                android:entries="@array/sp_fk"
+
                 android:background="#fff"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 />
