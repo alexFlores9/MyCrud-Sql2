@@ -27,4 +27,9 @@
         android:name="com.example.mycrudsql.categorias.Categorias"
         android:label="fragment_categorias"
         tools:layout="@layout/fragment_categorias" />
+    <fragment
+        android:id="@+id/nav_productos"
+        android:name="com.example.mycrudsql.productos.Productos"
+        android:label="fragment_productos"
+        tools:layout="@layout/fragment_productos" />
 </navigation>
