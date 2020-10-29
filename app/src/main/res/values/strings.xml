@@ -32,9 +32,9 @@
 
     <string-array name="preg">
         <item>Seleccione una pregunta</item>
-        <item>pregunta 1</item>
-        <item>pregunta 1 2</item>
-        <item>vpregunta 13</item>
-        <item>pregunta 14</item>
+        <item>Color favorito?</item>
+        <item>Nombre primera mascota?</item>
+        <item>Nombre de tu abuela?</item>
+        <item>Año de necimiento?</item>
     </string-array>
 </resources>
