@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/z"
     tools:context=".Login">
 
 
@@ -11,12 +12,54 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+         <!--   <Button
+                android:id="@+id/btnacerca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:background="#000000FF"
+                android:text="acercade"
+                android:textColor="#000"
+                android:textSize="18sp" /> -->
+
+            <Button
+                android:id="@+id/btnacerca"
+                android:layout_width="134dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="256dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:background="#000000FF"
+                android:drawableRight="@drawable/ic_inf"
+                android:drawablePadding="-140dp"
+
+                android:paddingRight="100dp"
+                android:shadowColor="#2314A8"
+                android:shadowDx="-3"
+                android:shadowDy="0"
+                android:shadowRadius="8"
+                android:text="acercade"
+                android:textColor="#fff" />
+
+
+
+        </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="150dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
+            android:background="@drawable/forma"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -61,10 +104,22 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="15dp"
-                android:background="#1976d2"
+                android:background="@drawable/btn"
                 android:text="Iniciar Sesión"
                 android:textColor="#FFF"
                 android:textSize="18sp" />
+            <Button
+                android:id="@+id/btnusu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="#000000FF"
+                android:text="Crear cuenta"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
 
         </LinearLayout>
     </FrameLayout>

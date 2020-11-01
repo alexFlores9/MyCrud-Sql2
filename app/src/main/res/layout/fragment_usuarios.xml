@@ -1,259 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/x"
     tools:context=".usuarios.Usuarios">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_idusuario"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_idusuario"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* Id usuario"
-            android:inputType="number"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:background="@drawable/forma"
+            android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* Nombre "
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_idusuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_idusuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_id"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Id usuario"
+                    android:inputType="number"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_id" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_apellido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_apellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* Apellido"
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Nombre "
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_user" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* correo"
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_usuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* usuario"
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_apellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_apellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Apellido"
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_user" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_clave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_clave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* clave"
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Correo"
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_email" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_usuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_user1"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Usuario"
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_user1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
-    <Spinner
-        android:id="@+id/sp_tipo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="370dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColorHint="#fff"
-        android:spinnerMode="dropdown"
-        android:background="#000"
-        style="@style/Widget.AppCompat.DropDownItem.Spinner"
-        />
-    <Spinner
-        android:id="@+id/sp_estado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColorHint="#fff"
-        android:spinnerMode="dropdown"
-        android:background="#000"
-        style="@style/Widget.AppCompat.DropDownItem.Spinner"
-        />
-
-    <Spinner
-        android:id="@+id/sp_pregunta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="430dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColorHint="#fff"
-        android:spinnerMode="dropdown"
-        android:background="#000"
-        style="@style/Widget.AppCompat.DropDownItem.Spinner"
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_respuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_respuesta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* respuesta"
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_clave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_clave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_pass"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Clave"
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_pass" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="550dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#000"
-        >
-        <Button
-            android:id="@+id/btnSaveu"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Guardar usu"
-            android:textColor="#fff"
-            android:background="#000"
-            />
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1" />
-        <Button
-            android:id="@+id/btnNewu"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="delete"
-            android:textColor="#fff"
-            android:background="#000"
-            />
-    </LinearLayout>
 
-</FrameLayout>
+            <Spinner
+                android:id="@+id/sp_tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="#fff"
+                android:spinnerMode="dropdown"
+
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                />
+
+            <Spinner
+                android:id="@+id/sp_estado"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:spinnerMode="dropdown"
+                android:textColorHint="#fff" />
+
+            <Spinner
+                android:id="@+id/sp_pregunta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColorHint="#fff"
+                android:spinnerMode="dropdown"
+
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_respuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColorHint="#000">
+                <EditText
+                    android:id="@+id/et_respuesta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:drawableStart="@drawable/ic_res"
+                    android:drawablePadding="5dp"
+                    android:ems="10"
+                    android:hint="* Respuesta"
+                    android:inputType="text"
+                    android:paddingLeft="1dp"
+                    android:textColor="#03168B"
+                    android:textSize="14dp"
+                    android:drawableLeft="@drawable/ic_res" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+
+                >
+                <Button
+                    android:id="@+id/btnSaveu"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Guardar usu"
+                    android:textColor="#fff"
+                    android:background="#BC6C6C6C"
+                    />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
+                <Button
+                    android:id="@+id/btnNewu"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="delete"
+                    android:textColor="#fff"
+                    android:background="#BC6C6C6C"
+
+
+
+                    />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnc"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_marginTop="25dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="   "
+                android:textColor="#fff"
+                android:background="#000000FF"/>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

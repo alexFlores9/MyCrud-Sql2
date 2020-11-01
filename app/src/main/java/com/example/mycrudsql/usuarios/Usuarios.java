@@ -1,6 +1,7 @@
 package com.example.mycrudsql.usuarios;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.mycrudsql.Login;
+import com.example.mycrudsql.MainActivity;
 import com.example.mycrudsql.MySingleton;
 import com.example.mycrudsql.R;
 import com.example.mycrudsql.Setting_VAR;
@@ -70,7 +73,7 @@ public class Usuarios extends Fragment  implements View.OnClickListener{
 
         sp_estado = root.findViewById(R.id.sp_estado);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
-                R.array.pre, android.R.layout.simple_spinner_item);
+                R.array.pre2, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_estado.setAdapter(adapter);
         sp_estado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -224,6 +227,10 @@ Toast.LENGTH_SHORT);
                     //Acciones para guardar registro en la base de datos.
                     Toast.makeText(getContext(), "Bien...", Toast.LENGTH_SHORT).show();
                     save_server(getContext(), Integer.parseInt(id), nombre,apellido,correo,usuario,clave,Integer.parseInt(datoSelectt),Integer.parseInt(datoSelect),(datoSelectp),respuesta);
+
+
+
+
                 }
                 break;
             case R.id.btnNewu:

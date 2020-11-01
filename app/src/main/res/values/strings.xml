@@ -21,11 +21,18 @@
 
 
     <string-array name="pre">
-        <item>Seleccione</item>
+        <item>Seleccione el tipo</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>
+
+
+    </string-array>
+
+    <string-array name="pre2">
+        <item>Seleccione el estado</item>
+        <item>1</item>
+        <item>2</item>
 
     </string-array>
 

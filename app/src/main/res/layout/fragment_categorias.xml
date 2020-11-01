@@ -3,104 +3,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/x"
     tools:context=".categorias.Categorias">
-
-    <!-- TODO: Update blank fragment layout -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_idcategoria"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_idcategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* Id Categorias"
-            android:inputType="number"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_namecategoria"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColorHint="#000">
-        <EditText
-            android:id="@+id/et_namecategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:drawableStart="@drawable/ic_menu_camera"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="* Nombre de Categoria"
-            android:inputType="text"
-            android:paddingLeft="1dp"
-            android:textColor="#03168B"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_menu_camera" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <Spinner
-        android:id="@+id/sp_estado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColorHint="#fff"
-        android:spinnerMode="dropdown"
-        android:background="#000"
-        style="@style/Widget.AppCompat.DropDownItem.Spinner"
-        />
-    <!-- android:entries="@array/estadoCategorias"-->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
+        android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#000"
-        >
+        android:background="@drawable/forma"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_idcategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColorHint="#000">
+            <EditText
+                android:id="@+id/et_idcategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:drawableStart="@drawable/ic_id"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="* Id Categorias"
+                android:inputType="number"
+                android:paddingLeft="1dp"
+                android:textColor="#03168B"
+                android:textSize="14dp"
+                android:drawableLeft="@drawable/ic_id" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_namecategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColorHint="#000">
+            <EditText
+                android:id="@+id/et_namecategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:drawableStart="@drawable/ic_cat"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="* Nombre de Categoria"
+                android:inputType="text"
+                android:paddingLeft="1dp"
+                android:textColor="#03168B"
+                android:textSize="14dp"
+                android:drawableLeft="@drawable/ic_cat" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Spinner
+            android:id="@+id/sp_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColorHint="#fff"
+            android:spinnerMode="dropdown"
+
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            />
+        <!-- android:entries="@array/estadoCategorias"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            >
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:textColor="#fff"
+                android:background="@drawable/btn2"
+                />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1" />
+            <Button
+                android:id="@+id/btnNew"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nueva Categoria"
+                android:textColor="#fff"
+                android:background="@drawable/btn2"
+                />
+
+
+
+        </LinearLayout>
+
         <Button
-            android:id="@+id/btnSave"
+            android:id="@+id/btnc"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_marginTop="25dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Guardar"
+            android:text="   "
             android:textColor="#fff"
-            android:background="#000"
-            />
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1" />
-        <Button
-            android:id="@+id/btnNew"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Nueva Categoria"
-            android:textColor="#fff"
-            android:background="#000"
-            />
+            android:background="#000000FF"/>
+
     </LinearLayout>
+</ScrollView>
+
 
 
 </FrameLayout>

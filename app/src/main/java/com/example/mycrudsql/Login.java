@@ -1,9 +1,13 @@
 package com.example.mycrudsql;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mycrudsql.usuarios.Usuarios;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +28,32 @@ import java.util.Map;
 public class Login extends AppCompatActivity {
 
     EditText edtUsuario,edtPassword;
-    Button btnLogin;
+    Button btnLogin,btnusu,btnacerca;
+
+    modal_Toast_Custom mo = new modal_Toast_Custom();
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            new android.app.AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_aviso)
+                    .setTitle("Warning")
+                    .setMessage("Realmente desea salir?")
+                    .setNegativeButton(android.R.string.cancel,null)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finishAffinity();
+                        }
+                    })
+                    .show();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +63,8 @@ public class Login extends AppCompatActivity {
         edtUsuario=findViewById(R.id.edtUsuario);
         edtPassword=findViewById(R.id.edtPassword);
         btnLogin=findViewById(R.id.btnLogin);
+        btnusu=findViewById(R.id.btnusu);
+        btnacerca=findViewById(R.id.btnacerca);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +72,23 @@ public class Login extends AppCompatActivity {
                 validarUsuario("http://192.168.43.105/service2020/validar_usuario.php");
             }
         });
+
+        btnusu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btnacerca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mo.dialogAbout(Login.this);
+            }
+        });
+
     }
     private void validarUsuario(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -70,5 +119,9 @@ public class Login extends AppCompatActivity {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+    private void borrar() {
+        edtUsuario.setText(null);
+        edtPassword.setText(null);
 
+    }
 }
