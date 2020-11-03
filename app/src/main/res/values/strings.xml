@@ -44,4 +44,19 @@
         <item>Nombre de tu abuela?</item>
         <item>Año de necimiento?</item>
     </string-array>
+
+    <string-array name="sp_fk">
+        <item>Seleccione el categoria</item>
+
+    </string-array>
+
+
+
+    <string-array name="estadoProductos">
+        <item>Seleccione el Estado del producto</item>
+        <item>1</item>
+        <item>2</item>
+
+    </string-array>
+
 </resources>

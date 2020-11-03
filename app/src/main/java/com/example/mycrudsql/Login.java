@@ -76,7 +76,7 @@ public class Login extends AppCompatActivity {
         btnusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent=new Intent(getApplicationContext(),ListProd.class);
                 startActivity(intent);
 
             }
