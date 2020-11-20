@@ -73,7 +73,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Autor"
+                            android:text="Autores"
                             android:fontFamily="cursive"
                             android:textAlignment="center"
                             android:textSize="24dp"
@@ -159,7 +159,7 @@
                                         android:textColor="#000"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="Información Desarrollador"
+                                        android:text="Información Desarrolladores"
                                         android:gravity="center"
                                         android:padding="5dp"
                                         />
@@ -167,37 +167,482 @@
                                 </LinearLayout>
 
 
+                                <androidx.cardview.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    card_view:cardUseCompatPadding="true"
+                                    card_view:cardElevation="3dp"
+                                    card_view:cardCornerRadius="5dp"
+                                    android:layout_margin="0dp"
+                                    card_view:cardBackgroundColor="#BC6C6C6C"
+                                    android:foreground="?android:attr/selectableItemBackground">
 
-                                <ImageView
-                                    android:id="@+id/foto"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_width="190dp"
-                                    android:layout_height="190dp"
-                                    android:src="@drawable/me"
-                                    />
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="0dp">
 
-                                <TextView
-                                    android:id="@+id/tv_doc_dr"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textAppearance="@android:style/TextAppearance"
-                                    android:text="Autor: Marlon Alexis Flores Navarrete\nE-mail: marlon.flores19@itca.edu.sv\nTeléfono: (+503)7834-5203"
-                                    android:layout_marginTop="5dp"
-                                    android:textColor="#000"
-                                    android:textSize="18dp"
-                                    />
+                                        <ImageView
+                                            android:id="@+id/imageView"
+                                            android:layout_width="120dp"
+                                            android:layout_height="145dp"
+                                            android:src="@drawable/me"
+                                            android:padding="4dp" />
+
+                                        <TextView
+                                            android:id="@+id/textViewCodigo"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView"
+                                            android:text="Nombre: "
+
+                                            android:background="#000"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff" />
+
+                                        <TextView
+                                            android:id="@+id/textViewId"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewCodigo"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView"
+                                            android:text="Marlon Alexi Flores Navarrete"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewDescripcion"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewId"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView"
+                                            android:paddingLeft="0dp"
+                                            android:paddingRight="15dp"
+                                            android:text="Correo:"
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewNombre"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewDescripcion"
+                                            android:layout_marginLeft="5dp"
+                                            android:textSize="15dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView"
+                                            android:text="marlon.flores19@itca.edu.sv"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/textViewPrecio"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewNombre"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView"
+                                            android:text="Carnet: "
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewEstado"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewPrecio"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView"
+                                            android:text="189719"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                                    </RelativeLayout>
+
+                                </androidx.cardview.widget.CardView>
 
 
-                                <!--      <TextView
-                                          android:id="@+id/tv_doc_dr1"
-                                          android:textColor="@color/colorPrimaryDark"
-                                          android:layout_width="wrap_content"
-                                          android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                                          android:layout_height="wrap_content"
-                                          android:text="Educación Superior:"
-                                          android:textSize="18dp"
-                                          android:layout_marginTop="15dp"
-                                          /> -->
+
+                                <androidx.cardview.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    card_view:cardUseCompatPadding="true"
+                                    card_view:cardElevation="3dp"
+                                    card_view:cardCornerRadius="5dp"
+                                    android:layout_margin="0dp"
+                                    card_view:cardBackgroundColor="#BC6C6C6C"
+                                    android:foreground="?android:attr/selectableItemBackground">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imageView1"
+                                            android:layout_width="120dp"
+                                            android:layout_height="150dp"
+                                            android:src="@drawable/osk"
+                                            android:padding="4dp" />
+
+                                        <TextView
+                                            android:id="@+id/textViewCodigo1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView1"
+                                            android:text="Nombre: "
+
+                                            android:background="#000"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff" />
+
+                                        <TextView
+                                            android:id="@+id/textViewId1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewCodigo1"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView1"
+                                            android:text="Oscar Noe Lopez Ceron"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewDescripcion1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewId1"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView1"
+                                            android:paddingLeft="0dp"
+                                            android:paddingRight="15dp"
+                                            android:text="Correo:"
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewNombre1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewDescripcion1"
+                                            android:layout_marginLeft="5dp"
+                                            android:textSize="15dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView1"
+                                            android:text="Nombre"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/textViewPrecio1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewNombre1"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView1"
+                                            android:text="Carnet: "
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewEstado1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewPrecio1"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView1"
+                                            android:text="189019"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                                    </RelativeLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+
+
+                                <androidx.cardview.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    card_view:cardUseCompatPadding="true"
+                                    card_view:cardElevation="3dp"
+                                    card_view:cardCornerRadius="5dp"
+                                    android:layout_margin="0dp"
+                                    card_view:cardBackgroundColor="#BC6C6C6C"
+                                    android:foreground="?android:attr/selectableItemBackground">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imageView2"
+                                            android:layout_width="120dp"
+                                            android:layout_height="145dp"
+                                            android:src="@drawable/r"
+                                            android:padding="4dp" />
+
+                                        <TextView
+                                            android:id="@+id/textViewCodigo2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView2"
+                                            android:text="Nombre: "
+
+                                            android:background="#000"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff" />
+
+                                        <TextView
+                                            android:id="@+id/textViewId2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewCodigo2"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView2"
+                                            android:text="Ruben Natividad Ramos Cubias"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewDescripcion2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewId2"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView2"
+                                            android:paddingLeft="0dp"
+                                            android:paddingRight="15dp"
+                                            android:text="Correo:"
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewNombre2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewDescripcion2"
+                                            android:layout_marginLeft="5dp"
+                                            android:textSize="15dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView2"
+                                            android:text="ruben.ramos19@itca.esu.sv"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/textViewPrecio2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewNombre2"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView2"
+                                            android:text="Carnet: "
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewEstado2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewPrecio2"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView2"
+                                            android:text="190119"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                                    </RelativeLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+
+                                <androidx.cardview.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    card_view:cardUseCompatPadding="true"
+                                    card_view:cardElevation="3dp"
+                                    card_view:cardCornerRadius="5dp"
+                                    android:layout_margin="0dp"
+                                    card_view:cardBackgroundColor="#BC6C6C6C"
+                                    android:foreground="?android:attr/selectableItemBackground">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imageView3"
+                                            android:layout_width="120dp"
+                                            android:layout_height="145dp"
+                                            android:src="@drawable/chele"
+                                            android:padding="4dp" />
+
+                                        <TextView
+                                            android:id="@+id/textViewCodigo3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView3"
+                                            android:text="Nombre: "
+
+                                            android:background="#000"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff" />
+
+                                        <TextView
+                                            android:id="@+id/textViewId3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewCodigo3"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView3"
+                                            android:text="Edwin Alexander Ayala Alvarado"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            android:textColor="#ffffff"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewDescripcion3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewId3"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView3"
+                                            android:paddingLeft="0dp"
+                                            android:paddingRight="15dp"
+                                            android:text="Correo:"
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewNombre3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewDescripcion3"
+                                            android:layout_marginLeft="5dp"
+                                            android:textSize="15dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView3"
+                                            android:text="edwinayala19@itca.edu.sv"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/textViewPrecio3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewNombre3"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@id/imageView3"
+                                            android:text="Carnet: "
+                                            android:background="#000"
+                                            android:textColor="#ffffff"
+                                            android:textStyle="bold"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/textViewEstado3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/textViewPrecio3"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginTop="1dp"
+                                            android:layout_toRightOf="@id/imageView3"
+                                            android:text="191019"
+                                            android:textColor="#ffffff"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                                    </RelativeLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <!--  <ImageView
+                                      android:id="@+id/foto"
+                                      android:layout_marginTop="5dp"
+                                      android:layout_width="190dp"
+                                      android:layout_height="190dp"
+                                      android:src="@drawable/me"
+                                      />
+
+                                  <TextView
+                                      android:id="@+id/tv_doc_dr"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:textAppearance="@android:style/TextAppearance"
+                                      android:text="Autor: Marlon Alexis Flores Navarrete\nE-mail: marlon.flores19@itca.edu.sv\nTeléfono: (+503)7834-5203"
+                                      android:layout_marginTop="5dp"
+                                      android:textColor="#000"
+                                      android:textSize="18dp"
+                                      />
+
+                                        <TextView
+                                            android:id="@+id/tv_doc_dr1"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:layout_width="wrap_content"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                            android:layout_height="wrap_content"
+                                            android:text="Educación Superior:"
+                                            android:textSize="18dp"
+                                            android:layout_marginTop="15dp"
+                                            /> -->
 
 
                                 <!--    <TextView

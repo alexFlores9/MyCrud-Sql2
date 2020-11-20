@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.mycrudsql.R;
 
 
@@ -34,11 +37,14 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.example.mycrudsql.MySingleton;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
+import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 public class Categorias extends Fragment  implements View.OnClickListener {
     private TextInputLayout ti_idcategoria, ti_namecategoria;
@@ -46,6 +52,7 @@ public class Categorias extends Fragment  implements View.OnClickListener {
     private Spinner sp_estado;
     private Button btnSave, btnNew;
     String datoSelect = "";
+    RequestQueue requestQueue;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -160,6 +167,9 @@ Toast.LENGTH_SHORT);
         };
         MySingleton.getInstance(context).addToRequestQueue(request);
     }
+
+
+
     private void new_categories() {
         et_idcategoria.setText(null);
         et_namecategoria.setText(null);

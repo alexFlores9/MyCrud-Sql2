@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AD2196F3">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:background="#000"
+        android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageButton
+               android:layout_marginLeft="10dp"
+                android:layout_width="175dp"
+                android:layout_height="200dp"
+                android:src="@drawable/inventario"/>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:layout_alignParentRight="true"
+                android:layout_width="175dp"
+                android:layout_height="200dp"
+                android:src="@drawable/inventario" />
+        </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_marginTop="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
+               <ImageButton
+                   android:layout_marginLeft="10dp"
+                   android:layout_width="175dp"
+                   android:layout_height="200dp"
+                   android:src="@drawable/inventario"/>
+               <Space
+                   android:layout_width="10dp"
+                   android:layout_height="match_parent"/>
+
+               <ImageButton
+                   android:layout_alignParentRight="true"
+                   android:layout_width="175dp"
+                   android:layout_height="200dp"
+                   android:src="@drawable/inventario" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_marginTop="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
+               <ImageButton
+                   android:layout_marginLeft="10dp"
+                   android:layout_width="175dp"
+                   android:layout_height="200dp"
+                   android:src="@drawable/inventario"/>
+               <Space
+                   android:layout_width="10dp"
+                   android:layout_height="match_parent"/>
+
+               <ImageButton
+                   android:layout_alignParentRight="true"
+                   android:layout_width="175dp"
+                   android:layout_height="200dp"
+                   android:src="@drawable/inventario" />
+           </LinearLayout>
+
+
+       </LinearLayout>
+</ScrollView>
+</RelativeLayout>

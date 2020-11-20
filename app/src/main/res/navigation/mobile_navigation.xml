@@ -37,4 +37,14 @@
         android:name="com.example.mycrudsql.usuarios.Usuarios"
         android:label="Registrate"
         tools:layout="@layout/fragment_usuarios" />
+    <activity
+        android:id="@+id/pruebaList"
+        android:name="com.example.mycrudsql.PruebaList"
+        android:label="activity_prueba_list"
+        tools:layout="@layout/activity_prueba_list" />
+    <fragment
+        android:id="@+id/editarCategoria"
+        android:name="com.example.mycrudsql.categorias.EditarCategoria"
+        android:label="editar_categoriasss"
+        tools:layout="@layout/fragment_editar_categoria" />
 </navigation>

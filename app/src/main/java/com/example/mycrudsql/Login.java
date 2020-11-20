@@ -2,11 +2,13 @@ package com.example.mycrudsql;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -76,9 +78,9 @@ public class Login extends AppCompatActivity {
         btnusu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),ListProd.class);
-                startActivity(intent);
-
+                FragmentManager fm = getSupportFragmentManager();
+                Usuarios us = new Usuarios();
+                fm.beginTransaction().replace(R.id.contenedor,us).commit();
             }
         });
 
@@ -97,6 +99,14 @@ public class Login extends AppCompatActivity {
              if (!response.isEmpty()){
                  Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                  startActivity(intent);
+
+                 new Handler().postDelayed(new Runnable() {
+                     @Override
+                     public void run() {
+                         borrar();
+                     }
+                 },2000);
+
              }else{
                  Toast.makeText(Login.this, "usuario o contra incorrecta", Toast.LENGTH_SHORT).show();
              }
