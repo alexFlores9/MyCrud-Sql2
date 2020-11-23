@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 
 import static android.content.ContentValues.TAG;
-public class EditarCategoria extends Fragment implements View.OnClickListener{
+public class EditarCategoria extends Fragment {
 
     private static final String TAG = "EditarCategoria";
     private TextInputLayout ti_idcategoria, ti_namecategoria;
@@ -54,6 +54,7 @@ public class EditarCategoria extends Fragment implements View.OnClickListener{
 
         ti_idcategoria = root.findViewById(R.id.ti_idcategoria);
         ti_namecategoria = root.findViewById(R.id.ti_namecategoria);
+
         et_idcategoria = root.findViewById(R.id.et_idcategoria);
         et_namecategoria = root.findViewById(R.id.et_namecategoria);
         sp_estado = root.findViewById(R.id.sp_estado);
@@ -95,7 +96,7 @@ public class EditarCategoria extends Fragment implements View.OnClickListener{
                 Log.i(TAG, "onClick -> id: " + id + ", name: " + name + ", estado: " + estado);
 
                 editarCat(Integer.parseInt(id), name, Integer.parseInt(estado));
-                Navigation.findNavController(v).navigate(R.id.pruebaList);
+                Navigation.findNavController(v).navigate(R.id.nav_mostrarCategorias);
             }
         });
 
@@ -105,28 +106,15 @@ public class EditarCategoria extends Fragment implements View.OnClickListener{
             public void onClick(View v) {
                 String id = et_idcategoria.getText().toString();
 
-                Log.i(TAG, "onClick -> id: " + id );
+              //  Log.i(TAG, "onClick -> id: " + id );
 
                 eliminarCat(Integer.parseInt(id));
-                Navigation.findNavController(v).navigate(R.id.pruebaList);
+                Navigation.findNavController(v).navigate(R.id.nav_mostrarCategorias);
             }
         });
         return root;
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnEdit:
-                //save_server(getContext(),);
-                Navigation.findNavController(v).navigate(R.id.pruebaList);
-
-                break;
-
-            default:
-        }
-
-    }
 
     private void editarCat(final int id_categoria, final String nom_categoria, final int estado_categoria ) {
         final StringRequest request = new StringRequest(Request.Method.POST, Setting_VAR.URL_Editar_Categoria, new Response.Listener<String>() {

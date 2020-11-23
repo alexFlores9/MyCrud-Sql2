@@ -1,11 +1,16 @@
 package com.example.mycrudsql;
 
+import android.content.Context;
+
+import java.util.List;
+
 public class dto_categorias {
     int id_categoria;
     String nom_categoria;
     int estado_categoria;
 
     public dto_categorias() {
+
     }
 
     public dto_categorias(int id_categoria, String nom_categoria, int estado_categoria) {
@@ -13,6 +18,7 @@ public class dto_categorias {
         this.nom_categoria = nom_categoria;
         this.estado_categoria = estado_categoria;
     }
+
 
     public int getId_categoria() {
         return id_categoria;

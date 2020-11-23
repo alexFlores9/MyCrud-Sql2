@@ -40,11 +40,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static android.content.ContentValues.TAG;
 
 
 public class EditarProducto extends Fragment {
-    private static final String TAG = "EditarProducto";
+//
 
     private TextInputLayout ti_id, ti_nombre_prod, ti_descripcion, ti_stock,
             ti_precio, ti_unidadmedida;
@@ -52,7 +55,7 @@ public class EditarProducto extends Fragment {
             et_precio, et_unidadmedida, et_fecha;
     private Spinner sp_estadoProductos, sp_fk_categoria;
     private TextView tv_fechahora;
-    private Button btnSave, btnEliminar1;
+    private Button btnedit, btndelete;
     ProgressDialog progressDialog;
     ArrayList<String> lista = null;
     ArrayList<dto_categorias> listaCategorias;
@@ -75,48 +78,74 @@ public class EditarProducto extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_editar_producto, container, false);
+        View view = inflater.inflate(R.layout.fragment_editar_producto, container, false);
 
-        ti_id = root.findViewById(R.id.ti_id);
-        ti_nombre_prod =root.findViewById(R.id.ti_nombre_prod);
-        ti_descripcion = root.findViewById(R.id.ti_descripcion);
+        ti_id = view.findViewById(R.id.ti_id);
+        ti_nombre_prod = view.findViewById(R.id.ti_nombre_prod);
+        ti_descripcion = view.findViewById(R.id.ti_descripcion);
 
-        et_id = root.findViewById(R.id.et_id);
-        et_nombre_prod = root.findViewById(R.id.et_nombre_prod);
-        et_descripcion = root.findViewById(R.id.et_descripcion);
-        et_stock = root.findViewById(R.id.et_stock);
-        et_precio = root.findViewById(R.id.et_precio);
-        et_unidadmedida = root.findViewById(R.id.et_unidadmedida);
-        sp_estadoProductos = root.findViewById(R.id.sp_estadoProductos);
-et_fecha=root.findViewById(R.id.et_fecha);
+        et_id = view.findViewById(R.id.et_id);
+        et_nombre_prod = view.findViewById(R.id.et_nombre_prod);
+        et_descripcion = view.findViewById(R.id.et_descripcion);
+        et_stock = view.findViewById(R.id.et_stock);
+        et_precio = view.findViewById(R.id.et_precio);
+        et_unidadmedida = view.findViewById(R.id.et_unidadmedida);
+        sp_estadoProductos = view.findViewById(R.id.sp_estadoProductos);
+        et_fecha=view.findViewById(R.id.et_fecha);
+
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(),
                 R.array.estadoCategorias, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_estadoProductos.setAdapter(adapter1);
 
-        sp_fk_categoria = root.findViewById(R.id.sp_fk_categoria);
-        tv_fechahora =root.findViewById(R.id.tv_fechahora);
+        sp_fk_categoria = view.findViewById(R.id.sp_fk_categoria);
+        tv_fechahora = view.findViewById(R.id.tv_fechahora);
         tv_fechahora.setText(timedate());
+        btnedit = view.findViewById(R.id.btneditar);
+        btndelete = view.findViewById(R.id.btneliminar);
 
-        btnEliminar1 = root.findViewById(R.id.btneliminar1);
+        //Boton Editar
+        btnedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = et_id.getText().toString();
+                String nombre = et_nombre_prod.getText().toString();
+                String descripcion = et_descripcion.getText().toString();
+                String stock = et_stock.getText().toString();
+                String precio = et_precio.getText().toString();
+                String unidad = et_unidadmedida.getText().toString();
+                String estado = sp_estadoProductos.getSelectedItem().toString();
+                String categoria = sp_fk_categoria.getSelectedItem().toString();
+                String  fecha  = et_fecha.getText().toString();
 
-        Bundle bb =getArguments();
+                editarPro(id, nombre, descripcion, stock, precio, unidad, estado, categoria, fecha);
+                Navigation.findNavController(view).navigate(R.id.nav_mostrarProductos);
+            }
+        });
 
-        et_id.setText(getArguments().getString("id_p"));
-        et_nombre_prod.setText(getArguments().getString("nom_p"));
-        et_descripcion.setText(getArguments().getString("des_p"));
-        et_stock.setText(getArguments().getString("st_p"));
-        et_precio.setText(getArguments().getString("pre_p"));
-        et_unidadmedida.setText(getArguments().getString("uni_p"));
-        sp_estadoProductos.setSelection(adapter1.getPosition(getArguments().getString("est_p")));
+        //Boton Eliminar
+        btndelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = et_id.getText().toString();
 
+                // Log.i(TAG, "onClick -> id: " + id );
 
-fk_categorias(getContext(),bb.getString("cat_p"));
+                eliminarPro(Integer.parseInt(id));
+                Navigation.findNavController(view).navigate(R.id.nav_mostrarProductos);
+            }
+        });
 
+        Bundle b = getArguments();
 
-
-
-        et_fecha.setText(getArguments().getString("fecha"));
+        et_id.setText(b.getString("id"));
+        et_nombre_prod.setText(b.getString("nombre"));
+        et_descripcion.setText(b.getString("descripcion"));
+        et_stock.setText(b.getString("stock"));
+        et_precio.setText(b.getString("precio"));
+        et_unidadmedida.setText(b.getString("unidad"));
+        sp_estadoProductos.setSelection(Integer.parseInt(b.getString("estado")));
+        et_fecha.setText(b.getString("fecha"));
 
         sp_estadoProductos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -135,7 +164,7 @@ fk_categorias(getContext(),bb.getString("cat_p"));
             }
         });
 
-
+        fk_categorias(getContext(), b.getString("categoria"));
 
         sp_fk_categoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -162,21 +191,7 @@ fk_categorias(getContext(),bb.getString("cat_p"));
             }
         });
 
-
-
-
-
-
-    btnEliminar1.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String id = et_id.getText().toString();
-
-            eliminarPro(Integer.parseInt(id));
-            Navigation.findNavController(v).navigate(R.id.nav_mostrarProductos);
-        }
-    });
-        return root;
+        return view;
     }
 
 
@@ -187,8 +202,7 @@ fk_categorias(getContext(),bb.getString("cat_p"));
         return fecha;
     }
 
-
-    public void fk_categorias(final Context context,final String catId){
+    public void fk_categorias(final Context context, final String Catid){
         listaCategorias = new ArrayList<dto_categorias>();
         lista = new ArrayList<String>();
         lista.add("Seleccione Categoria");
@@ -222,14 +236,17 @@ fk_categorias(getContext(),bb.getString("cat_p"));
                         Log.i("Id Categoria", String.valueOf(obj_categorias.getId_categoria()));
                         Log.i("Nombre Categoria", obj_categorias.getNom_categoria());
                         Log.i("Estado Categoria", String.valueOf(obj_categorias.getEstado_categoria()));
-
                     }
-                    int selectedPosition =0;
-                    for(int i=0; i<lista.size();i++){
-                        if(lista.get(i).contains(catId)){
-                            selectedPosition=i;
+
+                    int selectedPosition = 0;
+                    for (int i = 0; i < lista.size(); i++) {
+                        if (lista.get(i).contains(Catid)){
+                            selectedPosition = i;
                         }
                     }
+
+                    sp_fk_categoria.setSelection(selectedPosition);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -241,6 +258,54 @@ fk_categorias(getContext(),bb.getString("cat_p"));
             }
         });
         MySingleton.getInstance(context).addToRequestQueue(stringRequest);
+    }
+
+    private void editarPro(final String id, final String nom_producto, final String des_producto, final String stock, final String precio, final String unidad_medida, final String estado_producto, final String categoria ,final String fecha) {
+        final StringRequest request = new StringRequest(Request.Method.POST, Setting_VAR.URL_editarProductos, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                JSONObject resquestJSON = null;
+                Log.i(TAG, "response:" + response);
+                try {
+                    resquestJSON = new JSONObject(response.toString());
+                    String estado = resquestJSON.getString("estado");
+                    String mensaje = resquestJSON.getString("mensaje");
+
+                    if (estado.equals("1")) {
+                        Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();
+                        Log.i(TAG ,"estado" + estado);
+                    } else if (estado.equals("2")) {
+                        Toast.makeText(getContext(), "" + mensaje, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                Toast.makeText(getContext(), "No se puede guardar.\n" + "Intentelo más tarde.", Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            protected Map<String, String> getParams() throws AuthFailureError {
+                List<dto_productos> ListaProducto;
+                Map<String, String> map = new HashMap<>();
+                map.put("Content-Type", "application/json; charset=utf-8");
+                map.put("Accept", "application/json");
+                map.put("id", String.valueOf(id));
+                map.put("nombre", nom_producto);
+                map.put("descripcion", des_producto);
+                map.put("stock", stock);
+                map.put("precio", precio);
+                map.put("unidad", unidad_medida);
+                map.put("estado", estado_producto);
+                map.put("categoria", categoria);
+                map.put("fecha", fecha);
+                return map;
+            }
+        };
+        MySingleton.getInstance(getContext()).addToRequestQueue(request);
     }
 
     private void eliminarPro(final int id_producto) {
@@ -281,4 +346,5 @@ fk_categorias(getContext(),bb.getString("cat_p"));
         };
         MySingleton.getInstance(getContext()).addToRequestQueue(request);
     }
+
 }

@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Login extends AppCompatActivity {
-
+//debes revisar osk
     EditText edtUsuario,edtPassword;
     Button btnLogin,btnusu,btnacerca;
 
@@ -39,13 +39,13 @@ public class Login extends AppCompatActivity {
             new android.app.AlertDialog.Builder(this)
                     .setIcon(R.drawable.ic_aviso)
                     .setTitle("Warning")
-                    .setMessage("Realmente desea salir?")
+                    .setMessage("Realmente de logindesea salir?")
                     .setNegativeButton(android.R.string.cancel,null)
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            finishAffinity();
+                            finish();
                         }
                     })
                     .show();
@@ -100,12 +100,7 @@ public class Login extends AppCompatActivity {
                  Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                  startActivity(intent);
 
-                 new Handler().postDelayed(new Runnable() {
-                     @Override
-                     public void run() {
-                         borrar();
-                     }
-                 },2000);
+
 
              }else{
                  Toast.makeText(Login.this, "usuario o contra incorrecta", Toast.LENGTH_SHORT).show();

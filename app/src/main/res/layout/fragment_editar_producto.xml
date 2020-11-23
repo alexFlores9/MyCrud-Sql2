@@ -3,28 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
     tools:context=".productos.EditarProducto">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/x"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/tv_fechahora"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="190dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:text="yyyy-MM-dd HH:mm:ss"
-                />
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_id"
                 android:layout_width="match_parent"
@@ -33,6 +22,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_id"
                     android:layout_width="match_parent"
@@ -40,14 +30,15 @@
                     android:layout_marginTop="0dp"
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_1_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:ems="10"
                     android:hint="* Id Producto"
                     android:inputType="text"
                     android:textColor="#03168B"
                     android:textSize="14dp"
-                    android:drawableLeft="@drawable/ic_1_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_nombre_prod"
                 android:layout_width="match_parent"
@@ -56,6 +47,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_nombre_prod"
                     android:layout_width="match_parent"
@@ -63,14 +55,15 @@
                     android:layout_marginTop="0dp"
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_2_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:ems="10"
                     android:hint="* Nombre del Producto"
                     android:inputType="text"
                     android:textColor="#03168B"
                     android:textSize="14dp"
-                    android:drawableLeft="@drawable/ic_2_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_descripcion"
                 android:layout_width="match_parent"
@@ -79,6 +72,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_descripcion"
                     android:layout_width="match_parent"
@@ -87,14 +81,15 @@
                     android:text=""
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_3_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:textSize="14dp"
                     android:textColor="#03168B"
                     android:hint="Descripción del Producto"
                     android:background="#fff"
                     android:inputType="text"
-                    android:drawableLeft="@drawable/ic_3_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_stock"
                 android:layout_width="match_parent"
@@ -103,6 +98,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_stock"
                     android:layout_width="match_parent"
@@ -110,14 +106,15 @@
                     android:layout_marginTop="0dp"
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_4_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:ems="10"
                     android:hint="* Stock"
                     android:inputType="numberDecimal"
                     android:textColor="#03168B"
                     android:textSize="14dp"
-                    android:drawableLeft="@drawable/ic_4_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_precio"
                 android:layout_width="match_parent"
@@ -126,6 +123,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_precio"
                     android:layout_width="match_parent"
@@ -133,14 +131,15 @@
                     android:layout_marginTop="0dp"
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_5_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:ems="10"
                     android:hint="* Precio"
                     android:inputType="numberDecimal"
                     android:textColor="#03168B"
                     android:textSize="14dp"
-                    android:drawableLeft="@drawable/ic_5_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_unidadmedida"
                 android:layout_width="match_parent"
@@ -149,6 +148,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_unidadmedida"
                     android:layout_width="match_parent"
@@ -156,14 +156,15 @@
                     android:layout_marginTop="0dp"
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_6_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:ems="10"
                     android:hint="* Unidad de Medida (U, MTS, ROLL, PIE)"
                     android:inputType="text"
                     android:textColor="#03168B"
                     android:textSize="14dp"
-                    android:drawableLeft="@drawable/ic_6_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Spinner
                 android:id="@+id/sp_estadoProductos"
                 android:layout_width="match_parent"
@@ -179,7 +180,7 @@
                 android:background="#fff"
                 style="@style/Widget.AppCompat.DropDownItem.Spinner"
                 />
-            <!-- android:entries="@array/estadoCategorias"-->
+
             <Spinner
                 android:id="@+id/sp_fk_categoria"
                 android:layout_width="match_parent"
@@ -192,10 +193,17 @@
                 android:textColorHint="#000"
                 android:spinnerMode="dropdown"
                 android:entries="@array/sp_fk"
-
                 android:background="#fff"
-                style="@style/Widget.AppCompat.DropDownItem.Spinner"
-                />
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"/>
+
+            <TextView
+                android:id="@+id/tv_fechahora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:text="yyyy-MM-dd HH:mm:ss"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_f"
@@ -205,6 +213,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textColorHint="#000">
+
                 <EditText
                     android:id="@+id/et_fecha"
                     android:layout_width="match_parent"
@@ -212,16 +221,14 @@
                     android:layout_marginTop="0dp"
                     android:drawablePadding="5dp"
                     android:paddingLeft="1dp"
-                    android:drawableStart="@drawable/ic_7_p"
+                    android:drawableStart="@drawable/ic_menu_camera"
                     android:ems="10"
                     android:hint="* fecha"
                     android:inputType="text"
                     android:textColor="#03168B"
                     android:textSize="14dp"
-                    android:drawableLeft="@drawable/ic_7_p" />
+                    android:drawableLeft="@drawable/ic_menu_camera" />
             </com.google.android.material.textfield.TextInputLayout>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -231,6 +238,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:background="#000">
+
                 <Button
                     android:id="@+id/btneditar"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
@@ -239,29 +247,30 @@
                     android:layout_weight="1"
                     android:text="Editar"
                     android:textColor="#000"
-                    android:background="#fff"
-                    />
+                    android:background="#fff"/>
+
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-
                     android:layout_weight="0.1" />
+
                 <Button
-                    android:id="@+id/btneliminar1"
+                    android:id="@+id/btneliminar"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Eliminar"
                     android:textColor="#000"
-                    android:background="#fff"
-                    />
+                    android:background="#fff"/>
             </LinearLayout>
+
             <Space
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                />
+                android:layout_height="30dp"/>
+
         </LinearLayout>
+
     </ScrollView>
 
 </FrameLayout>

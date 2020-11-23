@@ -42,9 +42,28 @@
         android:name="com.example.mycrudsql.PruebaList"
         android:label="activity_prueba_list"
         tools:layout="@layout/activity_prueba_list" />
+
     <fragment
-        android:id="@+id/editarCategoria"
+        android:id="@+id/nav_editarCategoria"
         android:name="com.example.mycrudsql.categorias.EditarCategoria"
         android:label="editar_categoriasss"
         tools:layout="@layout/fragment_editar_categoria" />
+
+
+    <fragment
+        android:id="@+id/nav_mostrarCategorias"
+        android:name="com.example.mycrudsql.categorias.MostrarCategorias"
+        android:label="fragment_mostrar_categorias"
+        tools:layout="@layout/fragment_mostrar_categorias" />
+    <fragment
+        android:id="@+id/nav_mostrarProductos"
+        android:name="com.example.mycrudsql.productos.MostrarProductos"
+        android:label="fragment_mostrar_productos"
+        tools:layout="@layout/fragment_mostrar_productos" />
+
+    <fragment
+        android:id="@+id/nav_editarProducto"
+        android:name="com.example.mycrudsql.productos.EditarProducto"
+        android:label="fragment_editar_producto"
+        tools:layout="@layout/fragment_editar_producto" />
 </navigation>

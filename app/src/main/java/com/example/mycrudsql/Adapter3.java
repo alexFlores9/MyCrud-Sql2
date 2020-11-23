@@ -27,6 +27,7 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
         this.mCtx = mCtx;
         this.proList = proList;
     }
+
     private TextView getTextView(View v, int id_p){
         return v.findViewById(id_p);
     }
@@ -34,26 +35,24 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
 
 
     @Override
-    public ProViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.list_layout3,null);
-        return new ProViewHolder(view);
-
+    public ProViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_layout3, viewGroup, false);
+        ProViewHolder viewHolder = new ProViewHolder(v);
+        return  viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ProViewHolder holder, int position) {
-        dto_productos dtoP =proList.get(position);
+    public void onBindViewHolder(@NonNull  ProViewHolder holder, int position) {
 
-        holder.textViewId.setText(String.valueOf(dtoP.getId_producto()));
-        holder.textViewNombre.setText(dtoP.getNom_producto());
-        holder.textViewDescripcion.setText(dtoP.getDes_producto());
-        holder.textViewStock.setText(String.valueOf(dtoP.getStock()));
-        holder.textViewPrecio.setText(String.valueOf(dtoP.getPrecio()));
-        holder.textViewUnidad.setText(dtoP.getUnidad_medida());
-        holder.textViewEstado.setText(String.valueOf(dtoP.getEstado_producto()));
-        holder.textViewCategoria.setText(String.valueOf(dtoP.getCategoria()));
-        holder.textViewFecha.setText(dtoP.getFecha_entrada());
+        holder.textViewId.setText(String.valueOf(proList.get(position).getId_producto()));
+        holder.textViewNombre.setText(proList.get(position).getNom_producto());
+        holder.textViewDescripcion.setText(proList.get(position).getDes_producto());
+        holder.textViewStock.setText(String.valueOf(proList.get(position).getStock()));
+        holder.textViewPrecio.setText(String.valueOf(proList.get(position).getPrecio()));
+        holder.textViewUnidad.setText(proList.get(position).getUnidad_medida());
+        holder.textViewEstado.setText(String.valueOf(proList.get(position).getEstado_producto()));
+        holder.textViewCategoria.setText(String.valueOf(proList.get(position).getCategoria()));
+        holder.textViewFecha.setText(proList.get(position).getFecha_entrada());
 
     }
 
@@ -68,8 +67,10 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
     }
 
     public class ProViewHolder extends RecyclerView.ViewHolder {
+
         TextView textViewId, textViewNombre, textViewDescripcion, textViewStock, textViewPrecio, textViewUnidad, textViewEstado, textViewCategoria, textViewFecha;
         public ProViewHolder(View itemView) {
+
             super(itemView);
             textViewId =itemView.findViewById(R.id.textViewId);
             textViewNombre=itemView.findViewById(R.id.textViewNombre);
@@ -85,31 +86,29 @@ public class Adapter3 extends  RecyclerView.Adapter<Adapter3.ProViewHolder> {
                 @Override
                 public void onClick(View vv) {
 
-
-
-                    String id_p= getTextView(vv, R.id.textViewId).getText().toString();
-                    String nom_p= getTextView(vv, R.id.textViewNombre).getText().toString();
-                    String des_p= getTextView(vv, R.id.textViewDescripcion).getText().toString();
-                    String st_p= getTextView(vv, R.id.textViewStock).getText().toString();
-                    String pre_p= getTextView(vv, R.id.textViewPrecio).getText().toString();
-                    String uni_p= getTextView(vv, R.id.textViewUnidad).getText().toString();
-                    String est_p= getTextView(vv, R.id.textViewEstado).getText().toString();
-                    String cat_p= getTextView(vv, R.id.textViewCategoria).getText().toString();
-                    String fecha_p= getTextView(vv, R.id.textViewFecha).getText().toString();
+                    String id= getTextView(vv, R.id.textViewId).getText().toString();
+                    String nombre= getTextView(vv, R.id.textViewNombre).getText().toString();
+                    String descripcion = getTextView(vv, R.id.textViewDescripcion).getText().toString();
+                    String stock = getTextView(vv, R.id.textViewStock).getText().toString();
+                    String precio = getTextView(vv, R.id.textViewPrecio).getText().toString();
+                    String unidad = getTextView(vv, R.id.textViewUnidad).getText().toString();
+                    String estado = getTextView(vv, R.id.textViewEstado).getText().toString();
+                    String categoria = getTextView(vv, R.id.textViewCategoria).getText().toString();
+                    String fecha = getTextView(vv, R.id.textViewFecha).getText().toString();
 
                     Bundle bb = new Bundle();
 
-                   bb.putString("id_p", id_p);
-                    bb.putString("nom_p", nom_p);
-                    bb.putString("des_p", des_p);
-                    bb.putString("st_p", st_p);
-                    bb.putString("pre_p", pre_p);
-                    bb.putString("uni_p", uni_p);
-                    bb.putString("est_p", est_p);
-                    bb.putString("cat_p", cat_p);
-                    bb.putString("fecha", fecha_p);
+                   bb.putString("id", id);
+                    bb.putString("nombre", nombre);
+                    bb.putString("descripcion", descripcion);
+                    bb.putString("estado", estado);
+                    bb.putString("precio", precio);
+                    bb.putString("unidad", unidad);
+                    bb.putString("estado", estado);
+                    bb.putString("categoria", categoria);
+                    bb.putString("fecha", fecha);
 
-                    Navigation.findNavController(vv).navigate(R.id.nav_editarProducto, bb);
+                  Navigation.findNavController(vv).navigate(R.id.nav_editarProducto, bb);
                 }
             });
         }

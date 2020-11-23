@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,8 @@ public class Usuarios extends Fragment  implements View.OnClickListener{
     String datoSelect = "";
     String datoSelectt = "";
     String datoSelectp = "";
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -227,6 +230,8 @@ Toast.LENGTH_SHORT);
                     //Acciones para guardar registro en la base de datos.
                     Toast.makeText(getContext(), "Bien...", Toast.LENGTH_SHORT).show();
                     save_server(getContext(), Integer.parseInt(id), nombre,apellido,correo,usuario,clave,Integer.parseInt(datoSelectt),Integer.parseInt(datoSelect),(datoSelectp),respuesta);
+
+
 
 
 

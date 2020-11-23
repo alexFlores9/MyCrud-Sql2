@@ -4,26 +4,38 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_productos"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="pro" />
+
+
         <item
             android:id="@+id/nav_categorias"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="add categories" />
+            android:icon="@drawable/ic_add_c"
+            android:title="Agregar categorias" />
+        <item
+            android:id="@+id/nav_productos"
+            android:icon="@drawable/ic_add_pr"
+            android:title="Agregar productos" />
+
 
 
         <item
             android:id="@+id/nav_usuarios"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="usuarios" />
+            android:title="Crear usuario" />
+
+
 
 
 
         <item
-            android:id="@+id/editarCategoria"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="editar cat" />
+            android:id="@+id/nav_mostrarCategorias"
+            android:icon="@drawable/ic_view"
+            android:title="Ver categorias" />
+
+
+        <item
+            android:id="@+id/nav_mostrarProductos"
+            android:icon="@drawable/ic_view"
+            android:title="Ver productos" />
+
     </group>
 </menu>
